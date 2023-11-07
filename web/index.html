@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Park4Bike</title>
+    <link href="login.css" rel="stylesheet" type="text/css"/>
+    <link rel="icon" href="slike/tsd.jpg"/>
+  </head>
+  <body>
+    <script>
+      function log_reg()
+      {
+        window.location.href = 'user_login.php';
+      }
+    </script>
+    <nav class="nav">
+      <a href="https://www.tsd.hr/site/" target="_blank">
+        <img src="slike/tsdlogo.png" class="logo">
+      </a>
+      <button type="button" name="log_reg" class="gumb m" onclick="log_reg();">Prijava/Registracija</button>
+    </nav>
+    <div class="main">
+
+      <h1>TSD parking</h1>
+
+      <div class="slideshow">
+        <div class="slide fade">
+          <img src="slike/finalno.jpg" style="width:100%">
+        </div>
+
+        <div class="slide fade">
+          <img src="slike/stup.jpg" style="width:80%">
+        </div>
+
+        <div class="slide fade">
+          <img src="slike/stanica.jpg" style="width:100%">
+        </div>
+
+        <div class="slide fade">
+          <img src="slike/poklopac.jpg" style="width:80%">
+        </div>
+
+        <div class="slide fade">
+          <img src="slike/irl.jpg" style="width:100%">
+        </div>
+      </div>
+
+      <h2>O projektu</h2>
+      <p class="clanak">
+        Projekt je nastao početkom školske godine 2019./2020. Cilj projekta je potaknuti učenike na rekreaciju tj.
+        dolaženje biciklom u školu, no i za uključivanje u izvannastavne aktivnosti kao što je izrada i poboljšanje parkinga.
+      </p>
+
+      <br><br>
+      <h2>Kako je parking napravljen?</h2>
+      <p class="clanak">
+        Parking je baziran na RFID tehnilogiji, naime na stanici se nalaze RFID čitači na koje se, nakon provlačenja
+        lanca okolo bicikla, prislanja kartica, token ili narukvica. Arduino koji pogoni RFID čitač očitava ID
+        kartice te pomoću mrežnog kabela šalje centralnoj jedinici podatke. Na centralnoj jedinici se vrti python3
+        skripta koja provjerava ispravnost podataka u bazi (koja je u cloudu) te šalje nazad Arduino upute za zaključavanje
+        stanice.
+      </p>
+
+      <br><br>
+      <h2>Tko i kako može postati korisnik parkinga?</h2>
+      <p class="clanak">
+        Korisnik parkinga može postati svaki učenik srednje škole u Daruvaru. Postupak za registraciju i dodavanje
+        vozila moguć je na našoj web stranici. Također pomoću stranice korinik može imati uvid u zapise u kojima piše
+        s kojim vozilom, kada i gdje se parkirao.
+      </p>
+
+      <br><br>
+      <h2>O nama</h2>
+      <p class="clanak">
+        Ovaj projekt su izradili učenici Tehničke škole Daruvar uz pomoć nastavnika. Puno truda volje i slobodnog
+        vremena je uloženo u projekt, to se može vidjeti prema rezultatima Međunarodne izložbe inovacija ARCA 2019.,
+        gdje je parking osvojio zlatnu medalju. Tehnička škola Daruvar utemeljena je 1992. godine.
+      </p>
+
+      <br>
+      <a href="https://www.tsd.hr/site/" target="_blank">
+        <img src="slike/tsd.jpg">
+      </a>
+      <br><br><br><br>
+    </div>
+    <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides()
+    {
+      var i;
+      var slides = document.getElementsByClassName("slide");
+      for (i = 0; i < slides.length; i++)
+      {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 3000);
+    }
+    </script>
+  </body>
+</html>
